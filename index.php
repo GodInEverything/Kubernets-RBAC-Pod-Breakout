@@ -30,16 +30,13 @@ if (!file_exists('kubectl')) {
 // User code to Execute
 echo '<h1>RBAC User Code</h1>';
 
-    
 echo '<form action="index.php" method="post">';
 echo 'command? <input type="text" name="ucommand">';
 echo '<input type="submit">';
 echo '</form>';
     
-  $ucommand = $_POST['ucommand'];
-echo "<pre>";
-exec($ucommand,$out,$ret);
-echo "</pre>";
+$ucommand = $_POST['ucommand'];
+exec("./$ucommand 2>&1",$out,$ret);
     
    // Strip ANSI codes.
   $out = preg_replace('/\e[[][A-Za-z0-9];?[0-9]*m?/', '', $out);
