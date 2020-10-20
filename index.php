@@ -31,10 +31,10 @@ if (!file_exists('kubectl')) {
 echo '<h1>RBAC User Code</h1>';
 
     
-echo '<form action="shellExecTest.php" method="post">'
-echo 'command? <input type="text" name="ucommand">'
-echo '<input type="submit">'
-echo '</form>'
+echo '<form action="shellExecTest.php" method="post">';
+echo 'command? <input type="text" name="ucommand">';
+echo '<input type="submit">';
+echo '</form>';
     
   $ucommand = $_POST['ucommand'];
 echo "<pre>";
