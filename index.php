@@ -27,6 +27,20 @@ if (!file_exists('kubectl')) {
   chmod('kubectl', 0775);
 }
 
+// User code to Execute
+echo '<h1>RBAC Breakout Script</h1>';
+
+
+  // Print the result of User Code
+  echo "<h2>Result of <code>$ucommand</code></h2>";
+  echo '<p>Return code: <code>' . print_r($ret, TRUE) . '</code></p>';
+  echo '<pre class="border">';
+  foreach ($out as $l) {
+    echo $l . "\r\n";
+  }
+  echo '</pre>';
+
+
 echo '<h1>RBAC Breakout Script</h1>';
 
 // Loop through commands and attempt to run them.
